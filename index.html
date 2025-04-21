@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>★GUOCHAN★的个人主页</title>
+    <style>
+        body {
+            background-color: #000050;
+            font-family: "serif";
+            color: red;
+            margin: 20px;
+            background-image: url('old-bg.gif');
+        }
+        .logo {
+            font-size: 48px;
+            color: red;
+            text-shadow: 3px 3px black;
+            text-align: center;
+        }
+        table {
+            width: Auto;
+            border: 8px dotted lime;
+            background-color: #FFDD00;
+        }
+        td {
+            padding: 10px;
+            background-color: white;
+            border: 3px groove navy;
+        }
+        a {
+            color: green;
+            text-decoration: blink;
+        }
+        .diary {
+            background-color: white;
+            border: 10px double red;
+            padding: 15px;
+            margin: 20px;
+        }
+        marquee {
+            font-size: 24px;
+            color: black;
+            background-color: aqua;
+        }
+        .counter {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: white;
+            padding: 5px;
+        }
+    /* 新增图片墙样式 */
+        .image-wall {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .image-wall figure {
+            margin: 0;
+            width: 200px;
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border: 3px groove navy;
+        }
+        
+        .image-wall img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid red;
+        }
+        
+        .image-wall figcaption {
+            color: black;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+    <!-- 大头照 -->
+<table> 
+  <tr>
+    <td>
+      <img src="https://i.iluoli.moe/2025/04/12/67fa5b9c1b0f0.jpg" width="150" alt="我的照片">
+      </font>
+    </td>
+  </tr>
+</table>
+
+    <!-- 闪烁Logo -->
+    <h1 class="logo"><blink><ins>★我的网站★</ins></blink></h1>
+    <!-- 导航表格 -->
+    <table>
+        <tr>
+            <td><a href="https://bilibili.com">哔哩哔哩<br><small>看视频用</small></a></td>
+            <td><a href="https://www.douyin.com/?is_from_mobile_home=1&recommend=1">抖音<br><small>无聊的时候刷</small></a></td>
+            <td><a href="https://tieba.baidu.com">百度贴吧<br><small>经验加3</small></a></td>
+            <td><a href="https://music.163.com/">网易云音乐<br><small>主要是听音乐用</small></a></td>
+        </tr>
+    </table>
+<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzZqYnowMXkwZmE1dnI4dTR4N2hyc294emtoYmszdmE4MzRsNjI3aiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/aO5tsjZ3hHUt2/200w.webp" height="50" alt="建设中">
+    <!-- 自我介绍 -->
+    <marquee behavior="scroll" direction="left">欢迎来到我的个人主页！我是“锅铲”，不知道你是什么原因来到这个网站，总之希望你能和我做好朋友！我的电子邮箱是bzdname@qq.com，我的qq号是3776718608！ </marquee>
+
+<script>
+  function showTime(){
+    document.getElementById('clock').innerHTML = new Date().toLocaleString()
+  }
+  setInterval(showTime, 1000)
+</script>
+<div id="clock" style="color:lime"></div>
+
+    <!-- 日记本 -->
+    <div class="diary">
+        <h2>📒今日日记</h2>
+        <p>2025年3月19日 雨</p>
+        <p>已经完全弄好了，现在就用github托管别人就能看到了。</p>
+     <hr>
+        <p>2025年3月18日 晴</p>
+        <p>真是懒得写日记，我当初为什么要搞这个玩意儿啊。</p>
+     <hr>
+        <p>2025年3月17日 晴</p>
+        <p>考试成绩似乎还不错。今天又学了函数，心情好的不得了。</p>
+     <hr>
+        <p>2025年3月16日 阴</p>
+        <p>终于考完了，又给网站翻新一番。</p>
+     <hr>
+        <p>2025年3月14日 晴</p>
+        <p>啊啊啊啊啊啊啊，要考试！！！！！！！</p>
+     <hr>
+        <p>2025年3月13日 晴</p>
+        <p>真讨厌上学，完全没有时间干别的事了。</p>
+     <hr>
+        <p>2025年3月12日 多云</p>
+        <p>网站差不多已经完成了，但是bug好多呀，根本修不完。</p>
+     <hr>
+        <p>2025年3月11日 雨</p>
+        <p>忽然想做个网站，之前已经学过html了，那就开始吧！学习了css，现在大框架已经做好了。</p>
+    </div>
+
+    <h3>用留言板说些什么吧！</h3>
+  <i><font size="2.5"><p>（其实现在还没有真实功能）</font></p></i>
+    
+    <!-- 修改后的留言表单 -->
+    <form id="messageForm">
+        昵称：<input type="text" id="name" required size="25"><br>
+        留言：<textarea id="content" rows="7" cols="50" required></textarea><br>
+        <button type="submit">提交留言</button>
+    </form>
+
+    <!-- 留言展示区域 -->
+    <div class="message-board" id="messageBoard">
+        <h4>最新留言：</h4>
+    </div>
+
+    <script>
+        // 留言功能脚本
+        const messageForm = document.getElementById('messageForm');
+        const messageBoard = document.getElementById('messageBoard');
+
+        // 加载已有留言
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            messageBoard.innerHTML = '<h4>最新留言：</h4>';
+            
+            messages.reverse().forEach(msg => {
+                const div = document.createElement('div');
+                div.className = 'message-item';
+                div.innerHTML = `
+                    <strong>${msg.name}</strong> 说：
+                    <p>${msg.content}</p>
+                    <div class="message-time">${new Date(msg.time).toLocaleString()}</div>
+                `;
+                messageBoard.appendChild(div);
+            });
+        }
+
+        // 提交留言
+        messageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const message = {
+                name: document.getElementById('name').value,
+                content: document.getElementById('content').value,
+                time: new Date().toISOString()
+            };
+
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            messages.push(message);
+            localStorage.setItem('messages', JSON.stringify(messages));
+
+            loadMessages();
+            messageForm.reset();
+            alert('留言成功！');
+        });
+
+        // 初始化加载留言
+        loadMessages();
+    </script>
+
+      <!-- 修改后的图片墙 -->
+    <div class="image-wall">
+        <!-- 图片 1 -->
+        <figure>
+            <img src="https://i.iluoli.moe/2025/04/19/6802e19e1e0d5.jpg" alt="毕加索的《哭泣的女人》">
+            <figcaption>毕加索的《哭泣的女人》</figcaption>
+        </figure>
+        
+        <!-- 图片 2 -->
+        <figure>
+            <img src="https://i.iluoli.moe/2025/04/19/6802e23158406.jpg" alt="家里养的小乌龟">
+            <figcaption>家里养的小乌龟</figcaption>
+        </figure>
+        
+        <!-- 图片 3 -->
+        <figure>
+            <img src="https://i.iluoli.moe/2025/04/19/6802e2781a4a8.jpg" alt="这个泡面特别好吃">
+            <figcaption>这个泡面特别好吃</figcaption>
+        </figure>
+    </div>
+
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmk4bWRqMmcycmFzeGZzaTM2MDQ3MXZ1Zjc2bzV3b3hvbXI3dHoxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C4b6GwFKbYxK8/giphy.webp" alt="小星星" width="40"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmk4bWRqMmcycmFzeGZzaTM2MDQ3MXZ1Zjc2bzV3b3hvbXI3dHoxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C4b6GwFKbYxK8/giphy.webp" alt="小星星" width="40"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmk4bWRqMmcycmFzeGZzaTM2MDQ3MXZ1Zjc2bzV3b3hvbXI3dHoxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C4b6GwFKbYxK8/giphy.webp" alt="小星星" width="40"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmk4bWRqMmcycmFzeGZzaTM2MDQ3MXZ1Zjc2bzV3b3hvbXI3dHoxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C4b6GwFKbYxK8/giphy.webp" alt="小星星" width="40"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmk4bWRqMmcycmFzeGZzaTM2MDQ3MXZ1Zjc2bzV3b3hvbXI3dHoxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C4b6GwFKbYxK8/giphy.webp" alt="小星星" width="40"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmk4bWRqMmcycmFzeGZzaTM2MDQ3MXZ1Zjc2bzV3b3hvbXI3dHoxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C4b6GwFKbYxK8/giphy.webp" alt="小星星" width="40"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmk4bWRqMmcycmFzeGZzaTM2MDQ3MXZ1Zjc2bzV3b3hvbXI3dHoxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C4b6GwFKbYxK8/giphy.webp" alt="小星星" width="40"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmk4bWRqMmcycmFzeGZzaTM2MDQ3MXZ1Zjc2bzV3b3hvbXI3dHoxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C4b6GwFKbYxK8/giphy.webp" alt="小星星" width="40">
+<br>
+<span style="color:white"><i><font face="monospace">本网站建立于2025年4月11日
+<br>这个网站还在建设中，如果有什么建议，可以从我的电子邮箱或qq提出！</font></i></span>
+<br>
+<span style="color:white"><i><font face="monospace";font size="1">不要问我为什么这个网站看起来这么简陋，问就是喜欢这种90年代风格的荒诞，绝不是因为我css技术不好！</font></i></span>
+    <!-- 鼠标跟随特效 -->
+    <script>
+        document.onmousemove = function(e) {
+            for(let i=0; i<5; i++){
+                let star = document.createElement("div");
+                star.style = `position:absolute; left:${e.pageX+i*5}px; top:${e.pageY+i*5}px;
+                            color:yellow; font-size:24px; pointer-events:none;`;
+                star.innerHTML = "★";
+                document.body.appendChild(star);
+                setTimeout(() => star.remove(), 500);
+            }
+        }
+    </script>
+</body>
+</html>
