@@ -1,0 +1,171 @@
+body {
+    font-family:楷体, "Times New Roman", Times, serif;
+    background-color: #000000;
+    background-image: url('images/2.gif');
+    background-size: 150px;
+}
+
+.suoyou {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.biaotitu {
+    height: 200px;
+    width: 400px;
+}
+
+.biaoti {
+    height: 200px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.gun1 {
+    width: 800px;
+    background-color: #ff0000;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.gun1 span {
+    display: inline-block;
+    animation: marquee 0.3s linear infinite alternate;
+    color: #00ffff;
+}
+
+.gun2 {
+    width: 800px;
+    background-color: #ff00ff;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    font-size: 20px;
+}
+
+.gun2 span {
+    display: inline-block;
+    animation: marquee 0.3s linear infinite alternate;
+    color: #0000ff;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(800px - 100%));
+    }
+}
+
+.fenlei {
+    background-color: #ff0000;
+    color: #0000ff;
+    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
+    width: 400px;
+}
+
+/*animation:blink 0.3s infinite;
+}
+@keyframes blink
+{
+    0%, 100% {opacity:1;}
+    50% {opacity:0;}
+}*/
+table {
+    margin: 0 auto;
+}
+
+td {
+    vertical-align: top;
+    white-space: normal;
+}
+
+.cebianlan {
+    width: 200px;
+    background-color: #00ff00;
+    color: #ff0000;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1;
+}
+
+.cebianlan a {
+    color: #ff0000;
+}
+
+.zhuyao {
+    width: 600px;
+    background-color: #0000ff;
+    color: #ffff00;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1;
+}
+
+.tuijian {
+    width: 800px;
+    background-color: #00ffff;
+    color: #ff00ff;
+    margin: 0 auto;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+}
+
+.tuijian a {
+    color: #ff00ff;
+}
+
+.tuijiantu {
+    height: 120px;
+    width: 160px;
+    margin: 0 auto;
+    border-style: solid;
+    border-color: #ff0000;
+    border-width: medium;
+}
+
+.tuijiantupian {
+    height: 120px;
+    width: 160px;
+}
+
+.br {
+    height: 3000px;
+}
+
+.qiao {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.qiaotu {
+    width: 100%;
+    height: auto;
+}
+
+.shipin {
+    width: 800px;
+    background-color: #ffff00;
+    margin: 0 auto;
+    margin: 0;
+    line-height: 1;
+}
+:root {
+    --plyr-color-main: #ff0000;
+    --plyr-font-family: 楷体, "Times New Roman", Times, serif;
+    --plyr-font-size-large: 16px;
+}
+.plyr {
+  width:600px;
+  height:auto;
+  margin:0 auto;
+  display:block;
+}
