@@ -9,14 +9,14 @@
     </title>
     <script>
         if(!localStorage.getItem('confirmed')) {
-            document.body.innerHTML = `
+            document.write(`
                 <h2>警告</h2>
                 <p>本站包含恐怖内容，可能引起不适</p>
                 <p>继续访问即表示您已了解风险</p>
                 <br>
-                <button onclick="localStorage.setItem('confirmed','true');location.reload()">确定进入</button>
-                <button onclick="history.back()">取消返回</button>
-            `;
+                <button onclick="localStorage.setItem('confirmed','true');location.reload()">确定</button>
+                <button onclick="window.history.back()">取消</button>
+            `);
         }
     </script>
 </head>
