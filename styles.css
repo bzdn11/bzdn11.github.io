@@ -1,5 +1,5 @@
 body {
-    font-family:楷体, "Times New Roman", Times, serif;
+    font-family: 楷体, "Times New Roman", Times, serif;
     background-color: #000000;
     background-image: url('images/2.gif');
     background-size: 150px;
@@ -10,15 +10,15 @@ body {
     margin: 0 auto;
 }
 
-.biaotitu {
-    height: 200px;
-    width: 400px;
-}
-
 .biaoti {
     height: 200px;
     width: 400px;
     margin: 0 auto;
+}
+
+.biaotitu {
+    height: 200px;
+    width: 400px;
 }
 
 .gun1 {
@@ -158,14 +158,23 @@ td {
     margin: 0;
     line-height: 1;
 }
+
 :root {
     --plyr-color-main: #ff0000;
     --plyr-font-family: 楷体, "Times New Roman", Times, serif;
     --plyr-font-size-large: 16px;
 }
+
 .plyr {
-  width:600px;
-  height:auto;
-  margin:0 auto;
-  display:block;
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.zhuye {
+    color: #ff00ff;
+    text-align: center;
+    font-size: 30px;
+    display: block;
 }
