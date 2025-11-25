@@ -7,21 +7,29 @@
     <title>
         郔詢倓腔倷腦藝疑辦氈腔岍賜
     </title>
-    <script>
-        if(!localStorage.getItem('confirmed')) {
-            document.write(`
-                <h2>警告</h2>
-                <p>本站包含恐怖内容，可能引起不适</p>
-                <p>继续访问即表示您已了解风险</p>
-                <br>
-                <button onclick="localStorage.setItem('confirmed','true');location.reload()">确定</button>
-                <button onclick="window.history.back()">取消</button>
-            `);
-        }
-    </script>
 </head>
 
 <body>
+    <noscript>
+        <p>
+            请启用JavaScript
+        </p>
+    </noscript>
+    <script>
+        if (!localStorage.getItem('warningConfirmed')) {
+            document.body.style.display = 'none';
+            document.write(`
+                <div>
+                    <h2>警告</h2>
+                    <p>本站包含恐怖内容</p>
+                    <button onclick="localStorage.setItem('warningConfirmed','true');location.reload()">确定进入</button>
+                    <button onclick="window.history.back()">取消返回</button>
+                </div>
+            `);
+        } else {
+            document.body.style.display = 'block';
+        }
+    </script>
     <div class="suoyou">
         <br>
         <div class="gun1">
