@@ -123,6 +123,10 @@ td {
     color: #ff00ff;
 }
 
+.tuijian td {
+    width: 200px;
+}
+
 .tuijiantu {
     height: 120px;
     width: 160px;
@@ -169,12 +173,5 @@ td {
     width: 600px;
     height: auto;
     margin: 0 auto;
-    display: block;
-}
-
-.zhuye {
-    color: #ff00ff;
-    text-align: center;
-    font-size: 30px;
     display: block;
 }
