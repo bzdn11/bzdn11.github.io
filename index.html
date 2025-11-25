@@ -8,7 +8,16 @@
         郔詢倓腔倷腦藝疑辦氈腔岍賜
     </title>
     <script>
-        alert("警告\n本站包含恐怖内容\n可能引起不适\n\n点击确定继续访问");
+        if(!location.href.includes('confirmed=true')) {
+            document.body.innerHTML = `
+                <h2>警告</h2>
+                <p>本站包含恐怖内容，可能引起不适</p>
+                <p>继续访问即表示您已了解风险</p>
+                <br>
+                <button onclick="location.href=location.href+'?confirmed=true'">确定</button>
+                <button onclick="history.back()">取消</button>
+            `;
+        }
     </script>
 </head>
 
