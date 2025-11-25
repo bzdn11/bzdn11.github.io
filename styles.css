@@ -161,6 +161,8 @@ td {
     margin: 0 auto;
     margin: 0;
     line-height: 1;
+    color: #ff00ff;
+    text-align: center;
 }
 
 :root {
