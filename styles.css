@@ -71,13 +71,7 @@ body {
     width: 400px;
 }
 
-/*animation:blink 0.3s infinite;
-}
-@keyframes blink
-{
-    0%, 100% {opacity:1;}
-    50% {opacity:0;}
-}*/
+
 table {
     margin: 0 auto;
 }
@@ -163,9 +157,6 @@ td {
     line-height: 1;
     color: #ff00ff;
     text-align: center;
-    /*border-style: solid;
-    border-color: #ff0000;
-    border-width: medium;*/
 }
 
 :root {
@@ -179,7 +170,4 @@ td {
     height: auto;
     margin: 0 auto;
     display: block;
-    /*border-style: solid;
-    border-color: #00ff00;
-    border-width: medium;*/
 }
