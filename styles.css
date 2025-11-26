@@ -179,7 +179,7 @@ td {
     height: auto;
     margin: 0 auto;
     display: block;
-    border-style: solid;
+    /*border-style: solid;
     border-color: #00ff00;
-    border-width: medium;
+    border-width: medium;*/
 }
