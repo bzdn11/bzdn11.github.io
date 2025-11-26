@@ -163,9 +163,9 @@ td {
     line-height: 1;
     color: #ff00ff;
     text-align: center;
-    border-style: solid;
+    /*border-style: solid;
     border-color: #ff0000;
-    border-width: medium;
+    border-width: medium;*/
 }
 
 :root {
@@ -179,4 +179,7 @@ td {
     height: auto;
     margin: 0 auto;
     display: block;
+    border-style: solid;
+    border-color: #00ff00;
+    border-width: medium;
 }
