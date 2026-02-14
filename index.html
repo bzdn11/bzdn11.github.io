@@ -1,13 +1,407 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>
-            Hello World
-        </title>
-    </head>
-    <body>
-        <h1>Hello World</h1>
-        <p>Hello World</p>
-    </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google 模仿</title>
+    <!-- 使用 Google Sans 字体，接近谷歌风格 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Google Sans', Arial, sans-serif;
+            font-size: 14px;
+            color: #202124;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+
+        /* 顶部导航栏 */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 6px 14px;
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #202124;
+            font-size: 13px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+            opacity: 0.85;
+        }
+
+        .apps-icon {
+            width: 24px;
+            height: 24px;
+            padding: 4px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            opacity: 0.7;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .apps-icon:hover {
+            background-color: #f0f0f0;
+            opacity: 1;
+        }
+
+        .dot {
+            width: 3px;
+            height: 3px;
+            background-color: #5f6368;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .signin-btn {
+            background-color: #1a73e8;
+            color: white !important;
+            border: 1px solid transparent;
+            padding: 9px 23px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            cursor: pointer;
+            text-decoration: none !important;
+        }
+
+        .signin-btn:hover {
+            background-color: #1b66c9;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            text-decoration: none !important;
+        }
+
+        /* 主体内容，flex-grow 占满剩余空间 */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            margin-top: -80px; /* 微调垂直居中 */
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 92px;
+            font-weight: 500;
+            letter-spacing: -2px;
+            /* 经典的谷歌颜色 */
+            background: linear-gradient(to right, #4285f4, #ea4335, #fbbc04, #34a853);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            line-height: 1.1;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 584px;
+            margin-bottom: 30px;
+        }
+
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 8px 16px 8px 20px;
+            transition: box-shadow 0.2s, border-color 0.2s;
+            background-color: #fff;
+        }
+
+        .search-wrapper:hover, .search-wrapper:focus-within {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            border-color: rgba(223,225,229,0);
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            opacity: 0.5;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-family: 'Google Sans', Arial, sans-serif;
+            background: transparent;
+            padding: 6px 0;
+        }
+
+        .mic-icon, .camera-icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 12px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px;
+            opacity: 0.7;
+        }
+
+        .mic-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z"/></svg>');
+        }
+
+        .camera-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="3.2"/><path d="M9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>');
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .search-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            padding: 10px 18px;
+            font-size: 14px;
+            color: #3c4043;
+            cursor: pointer;
+            font-family: 'Google Sans', Arial, sans-serif;
+        }
+
+        .search-btn:hover {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+            border: 1px solid #dadce0;
+            background-color: #f1f3f4;
+            color: #202124;
+        }
+
+        .offer-text {
+            font-size: 13px;
+            color: #4d5156;
+            margin-top: 25px;
+        }
+
+        .offer-text a {
+            text-decoration: none;
+            color: #1a0dab;
+            margin: 0 5px;
+        }
+
+        .offer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* 底部区域 */
+        .footer {
+            background-color: #f2f2f2;
+            color: #70757a;
+            font-size: 14px;
+        }
+
+        .footer-top {
+            padding: 15px 30px;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .footer-top span {
+            color: #70757a;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #70757a;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-settings {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-settings a {
+            text-decoration: none;
+            color: #70757a;
+        }
+
+        .footer-settings a:hover {
+            text-decoration: underline;
+        }
+
+        .leaf-icon {
+            display: inline-block;
+            width: 12px;
+            height: 14px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2370757a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>');
+            background-size: contain;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 72px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .footer-links, .footer-settings {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="#">Gmail</a>
+            <a href="#">图片</a>
+            <div class="apps-icon" title="Google 应用">
+                <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <a href="#" class="signin-btn">登录</a>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="logo-container">
+            <span class="logo">Google</span>
+        </div>
+
+        <div class="search-container">
+            <div class="search-wrapper">
+                <span class="search-icon"></span>
+                <input type="text" class="search-input" aria-label="搜索" placeholder="在 Google 上搜索，或者输入一个网址">
+                <span class="mic-icon" title="语音搜索"></span>
+                <span class="camera-icon" title="以图搜图"></span>
+            </div>
+            <div class="buttons">
+                <button class="search-btn">Google 搜索</button>
+                <button class="search-btn">手气不错</button>
+            </div>
+            <div class="offer-text">
+                Google 提供：
+                <a href="#">English</a>
+                <a href="#">Français</a>
+                <a href="#">Españul</a>
+                <a href="#">Deutsch</a>
+                <a href="#">Italiano</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <span><span class="leaf-icon"></span> 碳中和</span>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="#">关于 Google</a>
+                <a href="#">广告</a>
+                <a href="#">商务</a>
+                <a href="#">搜索服务</a>
+            </div>
+            <div class="footer-settings">
+                <a href="#">隐私政策</a>
+                <a href="#">条款</a>
+                <a href="#">设置</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 简单交互：点击搜索按钮显示提示，纯粹模仿效果，无实际功能 -->
+    <script>
+        (function() {
+            const searchButtons = document.querySelectorAll('.search-btn');
+            const searchInput = document.querySelector('.search-input');
+            
+            function handleSearchClick() {
+                const query = searchInput.value.trim();
+                if (query === '') {
+                    alert('请输入搜索内容（演示模式，无实际跳转）');
+                } else {
+                    alert('您想搜索：“' + query + '” （此为模仿谷歌界面，不执行真实搜索）');
+                }
+            }
+
+            searchButtons.forEach(btn => {
+                btn.addEventListener('click', handleSearchClick);
+            });
+
+            // 语音/相机图标点击提示
+            document.querySelector('.mic-icon')?.addEventListener('click', () => {
+                alert('语音搜索功能演示 (非真实)');
+            });
+            document.querySelector('.camera-icon')?.addEventListener('click', () => {
+                alert('以图搜图功能演示 (非真实)');
+            });
+
+            // 让输入框支持回车搜索
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleSearchClick();
+                }
+            });
+        })();
+    </script>
+</body>
 </html>
