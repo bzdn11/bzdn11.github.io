@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'weimihei';
-    src: url('WenQuanWeiMiHei.ttf');
+    src: url('WenQuanWeiMiHei.woff2') format('woff2'),
+        url('WenQuanWeiMiHei.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -35,7 +36,9 @@ table {
     border-color: #0000ff;
 }
 
-.big_text {font-size: 1.5em;}
+.big_text {
+    font-size: 1.5em;
+}
 
 .page {
     width: 800px;
