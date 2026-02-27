@@ -1,25 +1,19 @@
 @font-face {
-    font-family: 'puhui';
-    src: url('AlibabaPuHuiTi-Medium.woff');
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'puhui';
-    src: url('AlibabaPuHuiTi-Bold.woff');
-    font-weight: 700;
+    font-family: 'weimihei';
+    src: url('WenQuanWeiMiHei.ttf');
     font-display: swap;
 }
 
 body {
-    font-family: 'puhui', Arial, sans-serif;
+    font-family: 'weimihei', Arial, sans-serif;
     background-color: #808080;
     color: #000000;
     font-size: 18px;
 }
 
-a {text-decoration:none;}
+a {
+    text-decoration: none;
+}
 
 table {
     width: 800px;
@@ -27,7 +21,6 @@ table {
 }
 
 .bar {
-    font-size: 1.5em;
     text-align: center;
     height: 2em;
     border-collapse: collapse;
@@ -42,15 +35,7 @@ table {
     border-color: #0000ff;
 }
 
-.bar1 {
-    text-align: center;
-    height: 2em;
-    border-collapse: collapse;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #0000ff;
-    background-color: #ccccff;
-}
+.big_text {font-size: 1.5em;}
 
 .page {
     width: 800px;
